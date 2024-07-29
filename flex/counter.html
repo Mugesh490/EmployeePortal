@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+    <div>
+        <input id="seconds" type="text">
+        <button onclick="startTimer()"> Start</button>
+        <div>
+            <h3 id="timer"></h3>
+        </div>
+    </div>
+</body>
+ 
+<script>
+    function startTimer() {
+      var seconds = document.getElementById("seconds").value;
+      var display = document.getElementById("timer");
+      var interval = setInterval(function() {
+        display.textContent = seconds;
+        seconds--;
+        if (seconds < 0) {
+          clearInterval(interval);
+          display.textContent = "Timeup";
+        }
+      }, 1000);
+    }
+</script>
+ 
+</html>
